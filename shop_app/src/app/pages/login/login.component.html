@@ -1,0 +1,29 @@
+<!-- <p>login works!</p> -->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-5 mt-5 mb-5">
+        <h1>Welcome Back</h1><hr>
+        <div class="alert alert-success" role="alert">
+          Login Successful<a href="">Forgot Password</a>
+        </div>
+        <form [formGroup]="loginForm" class="text-left">
+          <div class="form-group">
+            <!-- <label>Display Name</label>
+            <input type="text" class="form-control" placeholder="username" formControlName="displayName"> -->
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email Id here" formControlName="email">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="*****" formControlName="password">
+             <!-- <label>Display Name</label>
+            <input type="text" class="form-control" placeholder="*****"> -->
+
+          </div>
+          <button class="btn btn-outline-primary btn-block" (click)="login()">Login</button>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
