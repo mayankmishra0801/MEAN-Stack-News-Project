@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,7 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit{
   signupForm! : FormGroup;
-  constructor(private fb:FormBuilder){
+  message:string = "";
+  
+  constructor(private fb:FormBuilder, private auth:AuthService){
 
    this.signupForm = this.fb.group({
     'displayName':['',Validators.required],
@@ -22,7 +24,19 @@ export class RegisterComponent implements OnInit{
   }
 
   signup(){
-    alert("Account Created")
+     const data = this.signupForm.value;
+    delete data['confirm']
+     this.auth.signup(data).subscribe(res=>{
+      alert("User Register Successful")
+      this.signupForm.reset();
+     },err =>{
+      alert(err)
+     }
+
+     )
+
+
+    // alert("Account Created")
   }
 
 

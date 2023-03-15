@@ -6,6 +6,8 @@ const app =  express();
 const port = process.env.port || 8080
 const authRoute = require('./routes/auth-route')
 const mongoose = require('mongoose');
+const cors = require('cors')
+
 
 mongoose.connect('mongodb://localhost:27017/shopapp')
    
@@ -20,6 +22,8 @@ mongoose.connect('mongodb://localhost:27017/shopapp')
     app.use(bodyParser.urlencoded({extended:false}))
      
     app.use(bodyParser.json())
+
+    app.use(cors())
 
 app.use('/auth',authRoute);
 
