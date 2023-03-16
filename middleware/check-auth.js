@@ -8,7 +8,7 @@ module.exports = (req,res,next) =>{
  console.log("token",token)
   //  return res.json(token);
 
-  const decode = jwt.verify(token,"webBatch")
+const decode = jwt.verify(token,"webBatch")
 
   req.userData = decode
  

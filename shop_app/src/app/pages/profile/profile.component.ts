@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit{
      alert(JSON.stringify(res))
       if(res.success){
         this.data = res.data;
-         alert(this.data)
+         console.log(this.data)
       }else{
         this.logout();
       }

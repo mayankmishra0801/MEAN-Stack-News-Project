@@ -91,9 +91,9 @@ router.post('/login',(req,res)=>{
 })
 
 router.get('/profile', checkAuth, (req,res)=>{
-    const userId = "6412d2959407446f48d3c86e";
+    // const userId = "6412d2959407446f48d3c86e";
 
-    // const userId = req.userData.userId;
+    const userId = req.userData.userId;
     User.findById(userId).exec().then((result)=>{
          res.json({success:true,data:result})  
     }).catch(err=>{
