@@ -3,8 +3,9 @@
     <div class="col-md-6">
       <div class="card shadow-lg p-5 mt-5 mb-5">
         <h1>Welcome Here!</h1><hr>
-        <div class="alert alert-success" role="alert">
-          Account has been created! <a routerLink="/login" class="text-primary" style="cursor:pointer">Login here</a>
+        <div [ngClass]="className" role="alert">
+        {{message}}<a routerLink="/login" class="text-primary" style="cursor:pointer;">Login here</a>
+          <!-- Account has been created! <a routerLink="/login" class="text-primary" style="cursor:pointer">Login here</a> -->
         </div>
         <form [formGroup]="signupForm" class="text-left">
           <div class="form-group">

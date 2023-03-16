@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit{
 loginForm!: FormGroup
 
-constructor(private fb:FormBuilder){
+constructor(private fb:FormBuilder, private auth:AuthService, private router:Router){
 
 
   this.loginForm = this.fb.group({
@@ -23,7 +26,26 @@ constructor(private fb:FormBuilder){
  }
 
  login(){
-  alert("Login Successful")
- }
+  //  alert("Login Successful")
+  const data = this.loginForm.value;
+  this.auth.signin(data).subscribe((res)=>{
+
+    if(res.success){
+
+      localStorage.setItem('token',res.token)
+      // alert(res.success)
+
+      this.router.navigate(['/profile'])
+    }
+    else{
+      alert(res.message)
+    }
+
+
+  }, (err:any)=>{
+    alert("Login Failed")
+  })
+
+}
 
 }
