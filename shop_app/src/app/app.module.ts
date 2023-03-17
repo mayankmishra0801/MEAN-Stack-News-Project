@@ -12,6 +12,8 @@ import { FooterComponent } from './include/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { Cookies1Component } from './cookies1/cookies1.component';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterComponent,
     ProfileComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    Cookies1Component
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

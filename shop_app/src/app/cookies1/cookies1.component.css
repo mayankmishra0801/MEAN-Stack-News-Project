@@ -1,0 +1,34 @@
+.cookiebox{
+
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height: 50px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+
+}
+
+.textbox{
+  color:white;
+  padding-left: 10px;
+}
+
+.btn1{
+   color:red;
+   background-color: transparent;
+   border:none;
+   padding: 20px;
+}
+
+.btn2{
+  color:green;
+  background-color: transparent;
+  border:none;
+  padding: 20px;
+}
+

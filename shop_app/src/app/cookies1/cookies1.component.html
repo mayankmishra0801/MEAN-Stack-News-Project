@@ -1,0 +1,16 @@
+<!-- <p>cookies1 works!</p> -->
+<button (click)="Delete()">Delete</button>
+
+<div class="cookiebox" *ngIf="cookiebox">
+  <div class="textbox">
+    <span>By using our site,you acknowledge that you read and understand our cookie policy,Privacy Policy and our terms of service</span>
+  </div>
+
+  <div class="btnbox">
+  <button class="btn1" (click)="Decline()">Decline</button>
+  <button class="btn2" (click)="Allow()">Allow Cookies</button>
+
+  </div>
+
+
+</div>
