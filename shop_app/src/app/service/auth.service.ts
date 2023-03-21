@@ -24,6 +24,13 @@ export class AuthService {
       'Authorization' : "Bearer" + localStorage.getItem('token')
     }
 
+    // function setCookie(cname, cvalue, exdays) {
+    //   const d = new Date();
+    //   d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    //   let expires = "expires="+ d.toUTCString();
+    //   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    // }
+
     return this.http.get('http://localhost:8080/auth/profile',{headers:headers});
 
   }

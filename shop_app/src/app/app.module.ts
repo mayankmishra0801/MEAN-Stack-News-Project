@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { Cookies1Component } from './cookies1/cookies1.component';
 import { CookieService } from 'ngx-cookie-service';
+import { CustomerComponent } from './customer/customer.component';
+import { OrderComponent } from './order/order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { CookieService } from 'ngx-cookie-service';
     ProfileComponent,
     DashboardComponent,
     FooterComponent,
-    Cookies1Component
+    Cookies1Component,
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

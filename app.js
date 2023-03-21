@@ -3,11 +3,13 @@ const express = require("express");
 const bodyParser = require('body-parser')
 
 const app =  express();
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 const port = process.env.port || 8080
 const authRoute = require('./routes/auth-route')
 const mongoose = require('mongoose');
 const cors = require('cors')
-
 
 mongoose.connect('mongodb://localhost:27017/shopapp')
    

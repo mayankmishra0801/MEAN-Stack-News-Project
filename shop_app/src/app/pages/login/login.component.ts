@@ -32,6 +32,12 @@ constructor(private fb:FormBuilder, private auth:AuthService, private router:Rou
 
     if(res.success){
 
+      var today = new Date();
+      var expire = new Date();
+
+      expire.setTime(today.getTime() + 3600000*24*15);
+      document.cookie = data.name + "=" + res.token + ";path=/" + ";expires=" + expire.toUTCString();
+
       localStorage.setItem('token',res.token)
       // alert(res.success)
 

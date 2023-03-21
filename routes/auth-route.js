@@ -62,7 +62,7 @@ router.post('/register',(req,res)=>{
 // });
 router.post('/login',(req,res)=>{
     // res.json("Login Work")
-   
+   console.log(req.cookies)
   User.find({email:req.body.email}).exec().then((result) => {
    if(result.length < 1){
     return res.json({success:false , message: "User Not Found !!"})
@@ -74,12 +74,13 @@ router.post('/login',(req,res)=>{
             userId: user._id,
             
         }
-     const token =  jwt.sign(payload,"webBatch")
-
+     const token =  jwt.sign(payload,"webBatch");
+                    res.cookie('auth',token)
              return res.json({success:true,token:token,message:"Login Successful."})
         }
         // return res.json({success:true, message:"Login Successful."})
     else{
+       
         return  res.json({success:false,message:"Password does not Match!!"})
     }
   })
