@@ -3,6 +3,16 @@
   <app-navbar></app-navbar>
   </div>
  <main>
+  <div class="search-hero">
+    <input type="text" [(ngModel)] = "query" placeholder="Search for news">
+    <button (click) = "search()">Search</button>
+    <ul>
+      <!-- <li *ngFor="let article of articless">{{article.title}}</li> -->
+    </ul>
+  </div>
+
+
+
   <div class="container-fluid">
     <div class="row mb-3">
       <div *ngFor = "let data of newsList" class="col-lg-3 mt-3 mb-3">
