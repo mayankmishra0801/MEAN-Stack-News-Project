@@ -25,8 +25,9 @@ export class DashboardComponent {
   }
 
   search(){
-    this.link.searchnews(this.query).subscribe(response=>{
-      this.articless = response.articles
+    this.link.searchnews(this.query).subscribe(res=>{
+      console.log(res)
+      this.newsList = res.response
     })
   }
 

@@ -12,7 +12,7 @@ export class DashService {
   constructor(private http:HttpClient) { }
 
    private apiUrl = 'http://localhost:8080/api/news'
-   getNews():Observable<any>{
+   getNews(){
     return this.http.get<any>(this.apiUrl)
    }
 
