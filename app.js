@@ -1,7 +1,7 @@
 console.log("Hello Node js");
 const express = require("express");
 const bodyParser = require('body-parser')
-
+const newsRoutes=require('./routes/newsRoute')
 const app =  express();
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
@@ -39,6 +39,7 @@ app.get('/',(req,res) => {
 app.listen(port,()=>{
   console.log("Node server is connected",port)
 })
+app.use('/api',newsRoutes)
 
 
 

@@ -16,6 +16,7 @@ import { Cookies1Component } from './cookies1/cookies1.component';
 import { CookieService } from 'ngx-cookie-service';
 import { CustomerComponent } from './customer/customer.component';
 import { OrderComponent } from './order/order.component';
+import { DashService } from './service/dash.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import { OrderComponent } from './order/order.component';
     HttpClientModule
 
   ],
-  providers: [CookieService],
+  providers: [CookieService,DashService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

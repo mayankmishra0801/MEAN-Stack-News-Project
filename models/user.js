@@ -10,6 +10,8 @@ const userSchema = new Schema({
 
     email:{type:String,unique:true},
     password:{type:String,required:true},
+    mobileNumber:{type:String,required:true},
+    companyName:{type:String,required:true},
     create_at:{type:Number, default:Date.now().valueOf()},
     updated_at:{type:Number,default:Date.now().valueOf()}
 
