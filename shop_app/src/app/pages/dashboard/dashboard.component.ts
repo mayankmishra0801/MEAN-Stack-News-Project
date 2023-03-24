@@ -18,14 +18,14 @@ export class DashboardComponent {
   ngOnInit():void{
     // this.fb.allDatalogin();
 
-    this.link.getNews().subscribe((result)=>{
+    this.link.getNews().subscribe((result: { response: any[]; })=>{
       console.log(result)
       this.newsList = result.response
     })
   }
 
   search(){
-    this.link.searchnews(this.query).subscribe(res=>{
+    this.link.searchnews(this.query).subscribe((res: { response: any[]; })=>{
       console.log(res)
       this.newsList = res.response
     })

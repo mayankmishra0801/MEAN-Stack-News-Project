@@ -39,9 +39,10 @@ constructor(private fb:FormBuilder, private auth:AuthService, private router:Rou
       document.cookie = data.name + "=" + res.token + ";path=/" + ";expires=" + expire.toUTCString();
 
       localStorage.setItem('token',res.token)
+      this.auth.isLoggedIn=true
       // alert(res.success)
 
-      this.router.navigate(['/profile'])
+      this.router.navigate(['/dashboard'])
     }
     else{
       alert(res.message)

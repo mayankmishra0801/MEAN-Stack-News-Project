@@ -6,8 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
+   isLoggedIn:boolean=false;
   constructor(private http:HttpClient) { }
+
+  // isLoggedIn(){
+  //     return localStorage.getItem('token');
+
+
+  // }
 
   signup(data:any):Observable<any>{
    return this.http.post('http://localhost:8080/auth/register',data)
