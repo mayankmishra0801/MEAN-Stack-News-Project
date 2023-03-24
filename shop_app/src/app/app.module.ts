@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './include/navbar/navbar.component';
@@ -17,6 +16,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { CustomerComponent } from './customer/customer.component';
 import { OrderComponent } from './order/order.component';
 import { DashService } from './service/dash.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +28,17 @@ import { DashService } from './service/dash.service';
     FooterComponent,
     Cookies1Component,
     CustomerComponent,
-    OrderComponent
+    OrderComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+
 
   ],
   providers: [CookieService,DashService],
