@@ -13,6 +13,18 @@ export class DashboardComponent {
   query='';
   articless=[];
 
+  source: Array<any> = []
+
+  isChecked: {[key:string]:boolean} = {};
+
+  sourceDetails:string[]=[
+    "Hindustan Times",
+    "The Times of India",
+    "The Indian Express",
+    "NDTV News",
+    "Bar & Bench - Indian Legal News"
+  ]
+
   constructor(public link:DashService,){}
 
   ngOnInit():void{
@@ -28,6 +40,24 @@ export class DashboardComponent {
     this.link.searchnews(this.query).subscribe((res: { response: any[]; })=>{
       console.log(res)
       this.newsList = res.response
+    })
+  }
+
+  filter(checkbox:any){
+       if(this.isChecked[checkbox.value] == true){
+        this.isChecked[checkbox.value] = false;
+       }
+       else{
+        this.isChecked[checkbox.value] = true;
+       }this.addSkill();
+  }
+
+  addSkill(){
+    this.source = Object.keys(this.isChecked).filter((key)=> this.isChecked[key]);
+    console.log('this',this.source);
+    this.link.filternews(this.source).subscribe(resp=>{
+      console.log(resp)
+      this.newsList= resp.response;
     })
   }
 

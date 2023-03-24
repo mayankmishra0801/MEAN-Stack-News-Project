@@ -17,6 +17,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { OrderComponent } from './order/order.component';
 import { DashService } from './service/dash.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HeaderComponent } from './include/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     Cookies1Component,
     CustomerComponent,
     OrderComponent,
+    HeaderComponent,
 
   ],
   imports: [

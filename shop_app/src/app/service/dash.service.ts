@@ -21,4 +21,9 @@ export class DashService {
    }
 
 
+   filternews(source:string[]){
+    return this.http.get<any>(`${this.apiUrl}?source=${source}`)
+   }
+
+
 }

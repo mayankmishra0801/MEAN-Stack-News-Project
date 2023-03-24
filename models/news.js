@@ -7,9 +7,10 @@ const newsSchema = new Schema({
     description:String,
     url:String,
     urlToImage:String,
-    publishedAt:Date
+    publishedAt:Date,
+    source:String
 });
 
-const newsModel = mongoose.model('newsapi',newsSchema)
+const newsModel = mongoose.model('napi',newsSchema)
 
 module.exports = newsModel

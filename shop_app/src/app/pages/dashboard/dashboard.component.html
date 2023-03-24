@@ -1,36 +1,50 @@
 <div>
   <div>
-  <app-navbar></app-navbar>
+    <app-navbar></app-navbar>
   </div>
- <main>
-  <div class="search-hero">
-    <input type="text" [(ngModel)] = "query" placeholder="Search for news">
-    <button (click) = "search()">Search</button>
-    <ul>
-      <!-- <li *ngFor="let article of articless">{{article.title}}</li> -->
-    </ul>
-  </div>
+  <main>
+    <div class="search-hero">
+      <input type="text" [(ngModel)]="query" placeholder="Search for news" />
+      <button (click)="search()">Search</button>
+      <ul>
+        <!-- <li *ngFor="let article of articless">{{article.title}}</li> -->
+      </ul>
+    </div>
 
+    <h3>Select Source</h3>
+    <div class="filter" *ngFor="let source of sourceDetails">
+      <!-- <input
+        class="form-check-input"
+        (change)="filter($event.target)"
+        name=""
+        type="checkbox"
+        id=""
+        [value]="source"
+      > -->
+      <input type="checkbox" (change)="filter($event.target)" name=""  id="checkb" [value]="source">
 
-
-  <div class="container-fluid">
-    <div class="row mb-3">
-      <div *ngFor = "let data of newsList | filter:query" class="col-lg-3 mt-3 mb-3">
-        <div class="box">
-          <h3>{{data.author}}</h3>
-          <img src="{{data.urlToImage}}" width="100%" alt="">
-          <h5 class="mt-3 mb-3">{{data.title}}</h5>
-          <p>{{data.content}}</p>
-          <a href="{{data.url}}">Read More</a>
+      {{ source }}
+    </div>
+      <div class="container-fluid">
+        <div class="row mb-3">
+          <div
+            *ngFor="let data of newsList | filter : query"
+            class="col-lg-3 mt-3 mb-3"
+          >
+            <div class="box">
+              <h3>{{ data.author }}</h3>
+              <img src="{{ data.urlToImage }}" width="100%" alt="" />
+              <h5 class="mt-3 mb-3">{{ data.title }}</h5>
+              <p>{{ data.content }}</p>
+              <a href="{{ data.url }}">Read More</a>
+            </div>
+          </div>
         </div>
       </div>
+
+
+    <div>
+      <app-footer> </app-footer>
     </div>
-  </div>
-
-</main>
-
-
-<div>
-  <app-footer> </app-footer>
-</div>
+  </main>
 </div>
